@@ -1,0 +1,87 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-coffee-website-landing-page-with-distinct-sections-top-navigation-anchor-links-hero-headline-short-description-primary-cta-button-featured-products-menu-at-least-6-items-with-name-short-description-and-price-about-story-section-location-hours-section-testimonials-at-least-3-and-a-footer-social-links-placeholders-copyright",
+      "featureTitle": "Create a single-page coffee website landing page with distinct sections: top navigation (anchor links), hero (headline, short description, primary CTA button), featured products/menu (at least 6 items with name, short description, and price), about/story section, location & hours section, testimonials (at least 3), and a footer (social links placeholders + copyright).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CoffeeFooter.tsx",
+        "frontend/src/components/CoffeeTopNav.tsx",
+        "frontend/src/pages/CoffeeLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-creative-visual-theme-suitable-for-a-coffee-brand-colors-typography-scale-spacing-and-component-styling-and-enforce-it-consistently-across-all-sections-avoid-default-template-look",
+      "featureTitle": "Apply a cohesive, creative visual theme suitable for a coffee brand (colors, typography scale, spacing, and component styling) and enforce it consistently across all sections; avoid default/template look.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/index.css",
+        "frontend/src/pages/CoffeeLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-responsive-layout-behavior-for-mobile-tablet-and-desktop-including-a-mobile-friendly-navigation-e-g-collapsed-menu-and-readable-spacing-typography-at-small-widths",
+      "featureTitle": "Add responsive layout behavior for mobile, tablet, and desktop, including a mobile-friendly navigation (e.g., collapsed menu) and readable spacing/typography at small widths.",
+      "files": [
+        "frontend/src/components/CoffeeTopNav.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/CoffeeLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-include-custom-static-image-assets-for-the-page-logo-hero-image-and-a-subtle-background-texture-pattern-and-render-them-from-the-frontend-as-static-files-under-frontend-public-assets-generated",
+      "featureTitle": "Generate and include custom static image assets for the page (logo, hero image, and a subtle background texture/pattern) and render them from the frontend as static files under frontend/public/assets/generated.",
+      "files": [
+        "frontend/src/components/CoffeeFooter.tsx",
+        "frontend/src/components/CoffeeTopNav.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/CoffeeLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

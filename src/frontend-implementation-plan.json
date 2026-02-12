@@ -1,0 +1,138 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "One-page coffee brand landing page",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement a single-route landing page with anchored sections (nav, hero, menu, about, location & hours, testimonials, footer).",
+      "acceptanceCriteria": [
+        "All sections render on a single route/page (no multi-page routing required).",
+        "Top navigation links scroll to the correct section anchors.",
+        "Menu section shows at least 6 items with consistent styling and readable pricing.",
+        "Page includes a footer with social link placeholders (non-functional OK) and a visible copyright line."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the root App component that renders the single-page coffee landing experience (single route) and delegates to a dedicated CoffeeLandingPage component."
+        },
+        {
+          "path": "frontend/src/pages/CoffeeLandingPage.tsx",
+          "operation": "create",
+          "description": "Create the one-page layout with semantic sections and stable anchor IDs: #home (hero), #menu, #about, #location, #testimonials, and #footer; include menu (>=6 items), testimonials (>=3), and footer with social placeholders + copyright."
+        },
+        {
+          "path": "frontend/src/components/CoffeeTopNav.tsx",
+          "operation": "create",
+          "description": "Create a top navigation bar with anchor links to each section and a primary CTA link/button that scrolls to the menu section."
+        },
+        {
+          "path": "frontend/src/components/CoffeeFooter.tsx",
+          "operation": "create",
+          "description": "Create the footer with social link placeholders (e.g., Instagram/X/Facebook) and a visible copyright line; include the brand logo image placement (wired in REQ-4)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply a cohesive coffee-themed visual design system (warm earthy palette, typography scale, spacing, consistent components) across the page.",
+      "acceptanceCriteria": [
+        "Typography and color palette are consistent across hero, sections, and footer.",
+        "Buttons, cards, and headings share a unified style system (hover/focus states included).",
+        "The design is clearly coffee-themed (warm, earthy aesthetic) and does not rely on blue/purple as primary brand colors."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global styles and Tailwind layers for a coffee-themed design system: define warm/earthy CSS variables for the existing Tailwind color tokens, set typography scale, base spacing rules, smooth scroll behavior, and consistent focus/hover states."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Enhance document head for branding/typography (e.g., add font loading and meta theme color) to support the cohesive coffee aesthetic without changing routing."
+        },
+        {
+          "path": "frontend/src/pages/CoffeeLandingPage.tsx",
+          "operation": "modify",
+          "description": "Ensure all section layouts use the same spacing rhythm, heading styles, and shared UI patterns (button style, card style, section headers) so the page avoids a default/template look."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add responsive layouts and a mobile-friendly navigation that stays usable at small widths.",
+      "acceptanceCriteria": [
+        "No horizontal scrolling at common breakpoints (mobile/tablet/desktop).",
+        "Navigation remains usable on mobile (links accessible without overlap).",
+        "Hero, menu cards, and testimonials reflow appropriately (stack on mobile, grid on larger screens)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CoffeeTopNav.tsx",
+          "operation": "modify",
+          "description": "Implement responsive navigation behavior (collapsed mobile menu with a toggle) and ensure anchor links remain accessible and readable on small screens."
+        },
+        {
+          "path": "frontend/src/pages/CoffeeLandingPage.tsx",
+          "operation": "modify",
+          "description": "Apply responsive grid/stacking rules for hero layout, menu cards (stack on mobile, multi-column on larger screens), and testimonial cards; ensure padding/typography scale down cleanly."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add responsive typography and layout safeguards (e.g., max-widths, overflow-x prevention) to prevent horizontal scrolling and maintain readability on mobile/tablet."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Include custom generated static images (logo, hero image, background texture) under frontend/public/assets/generated and render them in the UI.",
+      "acceptanceCriteria": [
+        "All required generated images exist under frontend/public/assets/generated and are referenced directly by the frontend (no backend image serving).",
+        "Hero section displays the hero image without distortion (proper object-fit/cropping).",
+        "Logo is used in the navigation and/or footer and remains legible at small sizes.",
+        "Background pattern/texture is subtle and does not harm text readability (sufficient contrast)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/coffee-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated coffee brand logo mark + wordmark asset at this exact path for static frontend use."
+        },
+        {
+          "path": "frontend/public/assets/generated/coffee-hero.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated wide hero image asset at this exact path for static frontend use."
+        },
+        {
+          "path": "frontend/public/assets/generated/coffee-texture.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the generated seamless subtle background texture asset at this exact path for static frontend use."
+        },
+        {
+          "path": "frontend/src/pages/CoffeeLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire the generated hero image (frontend/public/assets/generated/coffee-hero.dim_1920x1080.png) into the hero section with non-distorting presentation (proper fit/crop) and ensure text overlays remain readable."
+        },
+        {
+          "path": "frontend/src/components/CoffeeTopNav.tsx",
+          "operation": "modify",
+          "description": "Wire the generated logo (frontend/public/assets/generated/coffee-logo.dim_512x512.png) into the navigation with a legible small-size rendering and appropriate alt text."
+        },
+        {
+          "path": "frontend/src/components/CoffeeFooter.tsx",
+          "operation": "modify",
+          "description": "Optionally reuse the generated logo (frontend/public/assets/generated/coffee-logo.dim_512x512.png) in the footer to reinforce branding while maintaining contrast and legibility."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Apply the generated background texture (frontend/public/assets/generated/coffee-texture.dim_1024x1024.png) as a subtle page background treatment with sufficient contrast so content remains readable."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Coffee-themed warm palette - Light Mode */
+        --background: 0.98 0.01 40;  /* Warm cream */
+        --foreground: 0.25 0.02 30;  /* Deep espresso brown */
+        
+        --card: 1 0 0;  /* Pure white for cards */
+        --card-foreground: 0.25 0.02 30;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.02 30;
+        
+        --primary: 0.35 0.08 35;  /* Rich coffee brown */
+        --primary-foreground: 0.98 0.01 40;  /* Cream text on brown */
+        
+        --secondary: 0.88 0.03 45;  /* Light caramel */
+        --secondary-foreground: 0.25 0.02 30;
+        
+        --muted: 0.92 0.02 40;  /* Soft beige */
+        --muted-foreground: 0.50 0.02 30;  /* Medium brown */
+        
+        --accent: 0.65 0.10 50;  /* Warm caramel accent */
+        --accent-foreground: 0.98 0.01 40;
+        
+        --destructive: 0.55 0.22 25;  /* Muted red */
+        --destructive-foreground: 0.98 0.01 40;
+        
+        --border: 0.88 0.02 40;  /* Light tan border */
+        --input: 0.88 0.02 40;
+        --ring: 0.35 0.08 35;  /* Coffee brown ring */
+        
+        --chart-1: 0.65 0.15 35;
+        --chart-2: 0.55 0.12 45;
+        --chart-3: 0.45 0.10 30;
+        --chart-4: 0.75 0.12 50;
+        --chart-5: 0.70 0.14 40;
+    }
+
+    .dark {
+        --background: 0.18 0.02 30;  /* Dark roast */
+        --foreground: 0.95 0.01 40;  /* Cream */
+        
+        --card: 0.22 0.02 30;  /* Slightly lighter than bg */
+        --card-foreground: 0.95 0.01 40;
+        
+        --popover: 0.20 0.02 30;
+        --popover-foreground: 0.95 0.01 40;
+        
+        --primary: 0.75 0.08 45;  /* Light caramel */
+        --primary-foreground: 0.18 0.02 30;  /* Dark text on light */
+        
+        --secondary: 0.28 0.03 35;  /* Medium brown */
+        --secondary-foreground: 0.95 0.01 40;
+        
+        --muted: 0.30 0.02 30;  /* Muted brown */
+        --muted-foreground: 0.70 0.02 40;  /* Light brown */
+        
+        --accent: 0.55 0.10 40;  /* Warm accent */
+        --accent-foreground: 0.95 0.01 40;
+        
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.95 0.01 40;
+        
+        --border: 0.30 0.02 30;
+        --input: 0.30 0.02 30;
+        --ring: 0.75 0.08 45;
+        
+        --chart-1: 0.65 0.15 35;
+        --chart-2: 0.55 0.12 45;
+        --chart-3: 0.75 0.10 50;
+        --chart-4: 0.70 0.12 40;
+        --chart-5: 0.60 0.14 35;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background-image: url('/assets/generated/coffee-texture.dim_1024x1024.png');
+        background-repeat: repeat;
+        background-size: 400px 400px;
+        background-attachment: fixed;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+    }
+    
+    /* Smooth scrolling offset for fixed nav */
+    section {
+        scroll-margin-top: 5rem;
+    }
+}
+
+@layer components {
+    /* Custom focus styles for better accessibility */
+    .focus-ring {
+        @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+    }
+    
+    /* Smooth transitions for interactive elements */
+    button, a {
+        @apply transition-all duration-200;
+    }
+}
+
+@layer utilities {
+    /* Text balance for better typography */
+    .text-balance {
+        text-wrap: balance;
+    }
+    
+    /* Prevent layout shift */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}

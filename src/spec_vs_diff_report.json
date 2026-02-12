@@ -1,0 +1,56 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T15:25:07.700Z",
+  "summary": "Most frontend requirements for a single-page coffee landing page (sections, theme, responsive nav) appear implemented, but the required generated static image assets are only referenced and not shown as added under the mandated public assets path. Diff also introduces unrequested attribution/tracking and Internet Identity wiring.",
+  "missing_requirements": [
+    {
+      "id": "REQ-4",
+      "requirement": "Generate and include custom static image assets (logo, hero image, background texture) as static files under frontend/public/assets/generated and reference them from the frontend.",
+      "reason": "The frontend references the required asset filenames/paths, but the diff does not show any image files added under frontend/public/assets/generated (or any frontend/public path). Without the actual files, the acceptance criteria for existing generated images cannot be verified from this diff.",
+      "evidence": [
+        "frontend/src/components/CoffeeTopNav.tsx (references /assets/generated/coffee-logo.dim_512x512.png)",
+        "frontend/src/components/CoffeeFooter.tsx (references /assets/generated/coffee-logo.dim_512x512.png)",
+        "frontend/src/pages/CoffeeLandingPage.tsx (references /assets/generated/coffee-hero.dim_1920x1080.png)",
+        "frontend/src/index.css (references /assets/generated/coffee-texture.dim_1024x1024.png)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Footer attribution link to caffeine.ai with UTM tracking based on hostname.",
+      "reason": "BuildRequest only asked for social link placeholders and copyright in the footer; it did not request third-party attribution or tracking parameters.",
+      "evidence": [
+        "frontend/src/components/CoffeeFooter.tsx"
+      ]
+    },
+    {
+      "description": "Internet Identity provider integration and actor/auth-related hooks added to the app bootstrapping.",
+      "reason": "BuildRequest is for a static one-page landing page and does not request authentication wiring or actor query hooks; non-goals also mention no user accounts beyond II, but no auth feature was requested.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/CoffeeFooter.tsx",
+    "frontend/src/components/CoffeeTopNav.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CoffeeLandingPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

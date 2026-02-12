@@ -1,0 +1,10 @@
+{
+  "frontend/src/App.tsx": "Root application component that renders the single-page coffee landing experience.",
+  "frontend/src/pages/CoffeeLandingPage.tsx": "Complete one-page coffee website with hero, menu (8 items), about, location & hours, testimonials (3), and footer sections with smooth scroll navigation.",
+  "frontend/src/components/CoffeeTopNav.tsx": "Responsive navigation bar with logo, anchor links, mobile sheet menu, and scroll-based background transition.",
+  "frontend/src/components/CoffeeFooter.tsx": "Footer component with branding, quick links, social media placeholders, copyright, and caffeine.ai attribution with UTM tracking.",
+  "frontend/src/index.css": "Global styles with coffee-themed OKLCH color system (warm browns, creams, caramel), custom typography (Playfair Display + Inter), smooth scrolling, and subtle texture background.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with coffee theme colors, custom fonts (Playfair Display serif, Inter sans), enhanced shadows, and fade-in animations.",
+  "frontend/index.html": "HTML document head with SEO meta tags, theme color, updated title, and Google Fonts preconnect for performance.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query hooks (empty as backend has no data operations)."
+}
