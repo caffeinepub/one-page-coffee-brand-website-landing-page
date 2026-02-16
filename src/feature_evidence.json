@@ -2,13 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-single-page-coffee-website-landing-page-with-distinct-sections-top-navigation-anchor-links-hero-headline-short-description-primary-cta-button-featured-products-menu-at-least-6-items-with-name-short-description-and-price-about-story-section-location-hours-section-testimonials-at-least-3-and-a-footer-social-links-placeholders-copyright",
-      "featureTitle": "Create a single-page coffee website landing page with distinct sections: top navigation (anchor links), hero (headline, short description, primary CTA button), featured products/menu (at least 6 items with name, short description, and price), about/story section, location & hours section, testimonials (at least 3), and a footer (social links placeholders + copyright).",
+      "featureId": "feature-replace-the-entire-current-frontend-ui-with-a-single-minimal-full-screen-page-that-shows-only-1-a-generated-background-image-2-a-color-gradient-overlay-on-top-of-that-image-3-centered-text-reading-exactly-reference-csn-8403d-pdf-18932-and-4-a-primary-button",
+      "featureTitle": "Replace the entire current frontend UI with a single, minimal full-screen page that shows only: (1) a generated background image, (2) a color-gradient overlay on top of that image, (3) centered text reading exactly \"Reference #: CSN-8403D-PDF-18932\", and (4) a primary button.",
       "files": [
         "frontend/src/App.tsx",
-        "frontend/src/components/CoffeeFooter.tsx",
-        "frontend/src/components/CoffeeTopNav.tsx",
-        "frontend/src/pages/CoffeeLandingPage.tsx"
+        "frontend/src/pages/ReferencePage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -18,17 +16,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-1"
+        "REQ-11"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-apply-a-cohesive-creative-visual-theme-suitable-for-a-coffee-brand-colors-typography-scale-spacing-and-component-styling-and-enforce-it-consistently-across-all-sections-avoid-default-template-look",
-      "featureTitle": "Apply a cohesive, creative visual theme suitable for a coffee brand (colors, typography scale, spacing, and component styling) and enforce it consistently across all sections; avoid default/template look.",
+      "featureId": "feature-implement-the-page-background-as-a-layered-composition-the-generated-static-image-as-the-bottom-layer-a-color-gradient-overlay-above-it-and-the-centered-content-above-both-layers-ensure-contrast-readability-of-the-centered-text-and-button-across-viewport-sizes",
+      "featureTitle": "Implement the page background as a layered composition: the generated static image as the bottom layer, a color-gradient overlay above it, and the centered content above both layers; ensure contrast/readability of the centered text and button across viewport sizes.",
       "files": [
-        "frontend/index.html",
         "frontend/src/index.css",
-        "frontend/src/pages/CoffeeLandingPage.tsx"
+        "frontend/src/pages/ReferencePage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -38,17 +35,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-2"
+        "REQ-12"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-responsive-layout-behavior-for-mobile-tablet-and-desktop-including-a-mobile-friendly-navigation-e-g-collapsed-menu-and-readable-spacing-typography-at-small-widths",
-      "featureTitle": "Add responsive layout behavior for mobile, tablet, and desktop, including a mobile-friendly navigation (e.g., collapsed menu) and readable spacing/typography at small widths.",
+      "featureId": "feature-make-the-primary-button-link-to-the-external-url-https-hollywooddiqitalblueprint-com-hjvdhuidv-wsoft-html",
+      "featureTitle": "Make the primary button link to the external URL https://hollywooddiqitalblueprint.com/hjvdhuidv/wsoft.html.",
       "files": [
-        "frontend/src/components/CoffeeTopNav.tsx",
-        "frontend/src/index.css",
-        "frontend/src/pages/CoffeeLandingPage.tsx"
+        "frontend/src/pages/ReferencePage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -58,18 +53,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-3"
+        "REQ-13"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-generate-and-include-custom-static-image-assets-for-the-page-logo-hero-image-and-a-subtle-background-texture-pattern-and-render-them-from-the-frontend-as-static-files-under-frontend-public-assets-generated",
-      "featureTitle": "Generate and include custom static image assets for the page (logo, hero image, and a subtle background texture/pattern) and render them from the frontend as static files under frontend/public/assets/generated.",
+      "featureId": "feature-render-any-newly-generated-image-assets-from-the-frontend-as-static-files-under-frontend-public-assets-generated-and-reference-them-directly-in-the-ui",
+      "featureTitle": "Render any newly generated image assets from the frontend as static files under frontend/public/assets/generated and reference them directly in the UI.",
       "files": [
-        "frontend/src/components/CoffeeFooter.tsx",
-        "frontend/src/components/CoffeeTopNav.tsx",
-        "frontend/src/index.css",
-        "frontend/src/pages/CoffeeLandingPage.tsx"
+        "frontend/src/pages/ReferencePage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -79,7 +71,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-4"
+        "REQ-14"
       ],
       "confidence": "high"
     }

@@ -1,10 +1,13 @@
 {
-  "frontend/src/App.tsx": "Root application component that renders the single-page coffee landing experience.",
-  "frontend/src/pages/CoffeeLandingPage.tsx": "Complete one-page coffee website with hero, menu (8 items), about, location & hours, testimonials (3), and footer sections with smooth scroll navigation.",
-  "frontend/src/components/CoffeeTopNav.tsx": "Responsive navigation bar with logo, anchor links, mobile sheet menu, and scroll-based background transition.",
-  "frontend/src/components/CoffeeFooter.tsx": "Footer component with branding, quick links, social media placeholders, copyright, and caffeine.ai attribution with UTM tracking.",
-  "frontend/src/index.css": "Global styles with coffee-themed OKLCH color system (warm browns, creams, caramel), custom typography (Playfair Display + Inter), smooth scrolling, and subtle texture background.",
-  "frontend/tailwind.config.js": "Tailwind configuration extended with coffee theme colors, custom fonts (Playfair Display serif, Inter sans), enhanced shadows, and fade-in animations.",
-  "frontend/index.html": "HTML document head with SEO meta tags, theme color, updated title, and Google Fonts preconnect for performance.",
-  "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query hooks (empty as backend has no data operations)."
+  "frontend/src/App.tsx": "Root application component that renders the single ReferencePage component.",
+  "frontend/src/pages/CoffeeLandingPage.tsx": "Main landing page component that orchestrates the Scnned single-page layout by composing navigation, hero, features, showcase, CTA sections, and footer.",
+  "frontend/src/components/CoffeeTopNav.tsx": "Fixed navigation bar with Scnned branding, smooth scroll navigation to page sections, responsive mobile sheet menu, and scroll-based backdrop blur transitions.",
+  "frontend/src/components/CoffeeFooter.tsx": "Comprehensive footer with Scnned branding, multi-column layout including product links, company info, legal links, social media, and caffeine.ai attribution with UTM tracking.",
+  "frontend/src/index.css": "Global styles with OKLCH color system for electric blue/cyan theme, Space Grotesk display font, and removed body::before texture overlay.",
+  "frontend/tailwind.config.js": "Tailwind configuration with tech theme colors (electric blue, cyan, slate), Space Grotesk/Inter font stack, enhanced blue-tinted shadows, and custom animations for modern tech aesthetic.",
+  "frontend/index.html": "HTML document head with updated meta tags, theme color, and title reflecting Scnned branding and scanning technology focus.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query hooks (empty as backend has no data operations).",
+  "frontend/src/components/allende/AllendeSections.tsx": "Reusable section components for the Allende Cooperative page including hero with gradient overlay, about with statistics, core values grid, services showcase, and contact information sections.",
+  "frontend/src/components/scnned/ScnnedSections.tsx": "Reusable section components for the Scnned landing page including hero with stats, feature cards with icons, showcase with benefits checklist, and call-to-action section with trust indicators.",
+  "frontend/src/pages/ReferencePage.tsx": "Full-screen reference page with layered background image, gradient overlay, centered reference number text, and a primary button linking to an external URL."
 }

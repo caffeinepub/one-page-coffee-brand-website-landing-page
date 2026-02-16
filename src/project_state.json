@@ -1,11 +1,14 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "Build a one-page coffee website.",
-  "architectural_notes": [],
+  "projectStateVersion": 9,
+  "summary": "Replace the existing coffee/clone landing page with a single minimal page featuring a generated background image under a color-gradient overlay, centered reference text, and a CTA button linking to an external URL.",
+  "architectural_notes": [
+    "Project scope changed: single-page minimal UI (full replacement), not the prior coffee/clone designs.",
+    "UI requirements: centered text + external-link button over gradient+image background."
+  ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Coffee brand logo mark + wordmark in a warm, minimalist style (coffee-logo.dim_512x512.png)\n- Wide hero photo/illustration of a cozy coffee scene (coffee-hero.dim_1920x1080.png)\n- Seamless subtle coffee-bean or paper-grain background texture (coffee-texture.dim_1024x1024.png)",
+  "imageRequirements": "## Required Images\n- Abstract soft-focus background image with smooth shapes and subtle grain (reference-bg.dim_1920x1080.png)",
   "existing_features": [
     {
       "id": "feature-create-a-single-page-coffee-website-landing-page-with-distinct-sections-top-navigation-anchor-links-hero-headline-short-description-primary-cta-button-featured-products-menu-at-least-6-items-with-name-short-description-and-price-about-story-section-location-hours-section-testimonials-at-least-3-and-a-footer-social-links-placeholders-copyright",
@@ -38,12 +41,92 @@
         "REQ-4"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-recreate-clone-the-page-at-https-coopallende-it-wp-admin-includes-wol-html-as-the-new-frontend-ui-for-this-project-matching-the-source-page-s-overall-layout-section-structure-typography-hierarchy-colors-spacing-and-interactive-behaviors-as-closely-as-practical-within-the-existing-react-tailwind-codebase",
+      "title": "Recreate (clone) the page at https://coopallende.it/wp-admin/includes/wol.html as the new frontend UI for this project, matching the source page’s overall layout, section structure, typography hierarchy, colors, spacing, and interactive behaviors as closely as practical within the existing React + Tailwind codebase.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refactor-the-existing-page-components-coffeelandingpage-top-navigation-footer-and-any-supporting-components-so-the-cloned-design-is-implemented-cleanly-with-reusable-react-components-and-tailwind-styles-without-modifying-any-files-under-frontend-src-components-ui-or-other-immutable-paths",
+      "title": "Refactor the existing page components (CoffeeLandingPage, top navigation, footer, and any supporting components) so the cloned design is implemented cleanly with reusable React components and Tailwind styles, without modifying any files under frontend/src/components/ui or other immutable paths.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-or-regenerate-any-static-image-assets-necessary-to-match-the-cloned-page-s-visual-design-e-g-logo-hero-background-imagery-decorative-textures-patterns-and-render-them-from-the-frontend-as-static-files-under-frontend-public-assets-generated",
+      "title": "Add or regenerate any static image assets necessary to match the cloned page’s visual design (e.g., logo, hero/background imagery, decorative textures/patterns), and render them from the frontend as static files under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-landing-page-ui-with-a-close-replication-of-https-scnned53565-onrender-com-using-the-existing-react-typescript-tailwind-codebase-match-layout-section-structure-typography-hierarchy-color-palette-spacing-and-interactive-behaviors-as-closely-as-practical",
+      "title": "Replace the current landing page UI with a close replication of https://scnned53565.onrender.com/ using the existing React + TypeScript + Tailwind codebase (match layout, section structure, typography hierarchy, color palette, spacing, and interactive behaviors as closely as practical).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refactor-or-replace-existing-page-components-coffeelandingpage-coffeetopnav-coffeefooter-and-any-section-components-as-needed-to-implement-the-replicated-design-cleanly-with-reusable-react-components-and-tailwind-styles-without-modifying-any-files-under-frontend-src-components-ui-or-other-immutable-paths",
+      "title": "Refactor or replace existing page components (CoffeeLandingPage, CoffeeTopNav, CoffeeFooter, and any section components) as needed to implement the replicated design cleanly with reusable React components and Tailwind styles, without modifying any files under frontend/src/components/ui or other immutable paths.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-include-any-static-image-assets-needed-to-match-the-visual-design-of-https-scnned53565-onrender-com-e-g-logo-hero-background-imagery-decorative-textures-patterns-and-render-them-from-the-frontend-as-static-files-under-frontend-public-assets-generated",
+      "title": "Generate and include any static image assets needed to match the visual design of https://scnned53565.onrender.com/ (e.g., logo, hero/background imagery, decorative textures/patterns) and render them from the frontend as static files under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-entire-current-frontend-ui-with-a-single-minimal-full-screen-page-that-shows-only-1-a-generated-background-image-2-a-color-gradient-overlay-on-top-of-that-image-3-centered-text-reading-exactly-reference-csn-8403d-pdf-18932-and-4-a-primary-button",
+      "title": "Replace the entire current frontend UI with a single, minimal full-screen page that shows only: (1) a generated background image, (2) a color-gradient overlay on top of that image, (3) centered text reading exactly \"Reference #: CSN-8403D-PDF-18932\", and (4) a primary button.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-page-background-as-a-layered-composition-the-generated-static-image-as-the-bottom-layer-a-color-gradient-overlay-above-it-and-the-centered-content-above-both-layers-ensure-contrast-readability-of-the-centered-text-and-button-across-viewport-sizes",
+      "title": "Implement the page background as a layered composition: the generated static image as the bottom layer, a color-gradient overlay above it, and the centered content above both layers; ensure contrast/readability of the centered text and button across viewport sizes.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-primary-button-link-to-the-external-url-https-hollywooddiqitalblueprint-com-hjvdhuidv-wsoft-html",
+      "title": "Make the primary button link to the external URL https://hollywooddiqitalblueprint.com/hjvdhuidv/wsoft.html.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-any-newly-generated-image-assets-from-the-frontend-as-static-files-under-frontend-public-assets-generated-and-reference-them-directly-in-the-ui",
+      "title": "Render any newly generated image assets from the frontend as static files under frontend/public/assets/generated and reference them directly in the UI.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
     {
-      "id": "AR-1",
-      "summary": "Create a one-page coffee website (single-page landing site for a coffee brand/shop).",
+      "id": "AR-4",
+      "summary": "Replace the entire current UI with a single simple page: generated background image layered under a color-gradient overlay, centered text “Reference #: CSN-8403D-PDF-18932”, and a button linking to https://hollywooddiqitalblueprint.com/hjvdhuidv/wsoft.html.",
       "reqIds": [],
       "status": "pending"
     }

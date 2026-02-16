@@ -1,7 +1,7 @@
-import CoffeeLandingPage from './pages/CoffeeLandingPage';
+import ReferencePage from './pages/ReferencePage';
 
 function App() {
-  return <CoffeeLandingPage />;
+  return <ReferencePage />;
 }
 
 export default App;

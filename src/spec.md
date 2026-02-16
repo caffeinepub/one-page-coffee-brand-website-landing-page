@@ -1,13 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Build a single-page, coffee-themed landing page with cohesive styling, responsive layout, and custom static image assets.
+**Goal:** Replace the existing frontend with a single minimal full-screen reference page featuring a generated background image, a gradient overlay, centered reference text, and one primary link button.
 
 **Planned changes:**
-- Create a one-page layout with anchored sections: top navigation, hero (headline, description, primary CTA), featured menu/products (≥6 items with name/description/price), about/story, location & hours, testimonials (≥3), and footer (social placeholders + copyright).
-- Implement anchor-link scrolling from the top navigation to each section.
-- Apply a consistent coffee-brand visual theme (warm/earthy colors, typography scale, spacing, unified buttons/cards with hover/focus states).
-- Add responsive behavior for mobile/tablet/desktop, including a mobile-friendly collapsed navigation and section reflow (stack on mobile, grid on larger screens).
-- Add and reference generated static assets (logo, hero image, subtle background texture) from `frontend/public/assets/generated`.
+- Remove the current multi-section UI (including any top nav/footer) and render a single full-viewport page.
+- Add a layered background: static generated image at the bottom with a semi-transparent color-gradient overlay above it.
+- Center one text element reading exactly: "Reference #: CSN-8403D-PDF-18932" and display one primary CTA button above the fold.
+- Make the primary button link to https://hollywooddiqitalblueprint.com/hjvdhuidv/wsoft.html.
+- Place and reference the generated background image as a static file under `frontend/public/assets/generated`.
 
-**User-visible outcome:** Visitors can scroll through a polished, coffee-themed one-page site, use the navigation to jump to sections, view a readable menu with pricing, and see testimonials, location/hours, and footer links on any device.
+**User-visible outcome:** Visiting the app shows one full-screen page with a background image + gradient overlay, centered reference text, and a single button that navigates to the provided external URL.

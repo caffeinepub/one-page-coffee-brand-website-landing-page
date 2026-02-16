@@ -17,10 +17,9 @@ export function CoffeeTopNav() {
 
   const navLinks = [
     { label: 'Home', href: '#home' },
-    { label: 'Menu', href: '#menu' },
-    { label: 'About', href: '#about' },
-    { label: 'Location', href: '#location' },
-    { label: 'Testimonials', href: '#testimonials' }
+    { label: 'Features', href: '#features' },
+    { label: 'Showcase', href: '#showcase' },
+    { label: 'Contact', href: '#contact' }
   ];
 
   const scrollToSection = (href: string) => {
@@ -36,8 +35,8 @@ export function CoffeeTopNav() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-md'
-          : 'bg-transparent'
+          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b'
+          : 'bg-background/70 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -45,15 +44,15 @@ export function CoffeeTopNav() {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('#home')}
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3 hover:opacity-90 transition-opacity group"
           >
             <img
-              src="/assets/generated/coffee-logo.dim_512x512.png"
-              alt="Coffee Shop Logo"
-              className="h-12 w-12 object-contain"
+              src="/assets/generated/scnned-logo.dim_512x512.png"
+              alt="Scnned Logo"
+              className="h-12 w-12 object-contain group-hover:scale-110 transition-transform"
             />
-            <span className={`text-2xl font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>
-              Brew Haven
+            <span className="text-3xl font-black tracking-tighter text-foreground">
+              scnned
             </span>
           </button>
 
@@ -63,18 +62,17 @@ export function CoffeeTopNav() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isScrolled ? 'text-foreground' : 'text-white'
-                }`}
+                className="text-sm font-semibold transition-colors hover:text-primary uppercase tracking-wider"
               >
                 {link.label}
               </button>
             ))}
             <Button
-              onClick={() => scrollToSection('#menu')}
-              variant={isScrolled ? 'default' : 'secondary'}
+              onClick={() => scrollToSection('#contact')}
+              variant="default"
+              className="uppercase tracking-wide font-bold"
             >
-              Order Now
+              Get Started
             </Button>
           </div>
 
@@ -84,7 +82,6 @@ export function CoffeeTopNav() {
               <Button
                 variant="ghost"
                 size="icon"
-                className={isScrolled ? 'text-foreground' : 'text-white'}
               >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </Button>
@@ -93,26 +90,26 @@ export function CoffeeTopNav() {
               <div className="flex flex-col gap-6 mt-8">
                 <div className="flex items-center gap-3 mb-4">
                   <img
-                    src="/assets/generated/coffee-logo.dim_512x512.png"
-                    alt="Coffee Shop Logo"
-                    className="h-10 w-10 object-contain"
+                    src="/assets/generated/scnned-logo.dim_512x512.png"
+                    alt="Scnned Logo"
+                    className="h-12 w-12 object-contain"
                   />
-                  <span className="text-xl font-bold">Brew Haven</span>
+                  <span className="text-2xl font-black tracking-tighter">scnned</span>
                 </div>
                 {navLinks.map((link) => (
                   <button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="text-left text-lg font-medium hover:text-primary transition-colors"
+                    className="text-left text-lg font-semibold hover:text-primary transition-colors uppercase"
                   >
                     {link.label}
                   </button>
                 ))}
                 <Button
-                  onClick={() => scrollToSection('#menu')}
-                  className="mt-4"
+                  onClick={() => scrollToSection('#contact')}
+                  className="mt-4 uppercase font-bold"
                 >
-                  Order Now
+                  Get Started
                 </Button>
               </div>
             </SheetContent>

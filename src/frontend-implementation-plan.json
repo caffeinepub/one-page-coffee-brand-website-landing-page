@@ -1,136 +1,82 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "One-page coffee brand landing page",
+  "title": "Reference Gradient Page — Single Minimal Reference Screen",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Implement a single-route landing page with anchored sections (nav, hero, menu, about, location & hours, testimonials, footer).",
+      "id": "REQ-11",
+      "summary": "Replace the existing multi-section UI with a single full-screen reference page containing only the background image, gradient overlay, centered reference text, and one primary button.",
       "acceptanceCriteria": [
-        "All sections render on a single route/page (no multi-page routing required).",
-        "Top navigation links scroll to the correct section anchors.",
-        "Menu section shows at least 6 items with consistent styling and readable pricing.",
-        "Page includes a footer with social link placeholders (non-functional OK) and a visible copyright line."
+        "Visiting the app shows a single full-viewport page without the existing Scnned sections, top nav, or footer.",
+        "The page contains exactly one prominent centered text element with: Reference #: CSN-8403D-PDF-18932",
+        "The page includes one primary button (CTA) visible above the fold on mobile and desktop."
       ],
       "file_operations": [
+        {
+          "path": "frontend/src/pages/ReferencePage.tsx",
+          "operation": "create",
+          "description": "Create a single minimal full-screen page that renders (1) a generated background image, (2) a gradient overlay, (3) centered text reading exactly \"Reference #: CSN-8403D-PDF-18932\", and (4) one primary CTA button. Use the shadcn-ui Button component for the primary button styling/behavior. Verify the component's usage instructions before implementing."
+        },
         {
           "path": "frontend/src/App.tsx",
-          "operation": "create",
-          "description": "Create the root App component that renders the single-page coffee landing experience (single route) and delegates to a dedicated CoffeeLandingPage component."
-        },
-        {
-          "path": "frontend/src/pages/CoffeeLandingPage.tsx",
-          "operation": "create",
-          "description": "Create the one-page layout with semantic sections and stable anchor IDs: #home (hero), #menu, #about, #location, #testimonials, and #footer; include menu (>=6 items), testimonials (>=3), and footer with social placeholders + copyright."
-        },
-        {
-          "path": "frontend/src/components/CoffeeTopNav.tsx",
-          "operation": "create",
-          "description": "Create a top navigation bar with anchor links to each section and a primary CTA link/button that scrolls to the menu section."
-        },
-        {
-          "path": "frontend/src/components/CoffeeFooter.tsx",
-          "operation": "create",
-          "description": "Create the footer with social link placeholders (e.g., Instagram/X/Facebook) and a visible copyright line; include the brand logo image placement (wired in REQ-4)."
+          "operation": "modify",
+          "description": "Replace the current root UI rendering (CoffeeLandingPage) with the new ReferencePage so the existing sections/top nav/footer are no longer shown."
         }
       ]
     },
     {
-      "id": "REQ-2",
-      "summary": "Apply a cohesive coffee-themed visual design system (warm earthy palette, typography scale, spacing, consistent components) across the page.",
+      "id": "REQ-12",
+      "summary": "Implement layered background composition (static generated image + semi-transparent gradient overlay) with readable centered content across viewports.",
       "acceptanceCriteria": [
-        "Typography and color palette are consistent across hero, sections, and footer.",
-        "Buttons, cards, and headings share a unified style system (hover/focus states included).",
-        "The design is clearly coffee-themed (warm, earthy aesthetic) and does not rely on blue/purple as primary brand colors."
+        "The background image loads from a static file under frontend/public/assets/generated.",
+        "A semi-transparent gradient overlay is visually present above the image.",
+        "Text and button remain readable on common screen sizes (mobile, tablet, desktop) without clipping."
       ],
       "file_operations": [
         {
+          "path": "frontend/src/pages/ReferencePage.tsx",
+          "operation": "modify",
+          "description": "Implement the layered layout: bottom layer uses the static image at frontend/public/assets/generated/reference-bg.dim_1920x1080.png, gradient overlay layer above it, and centered content above both; ensure responsive sizing and adequate contrast for the centered text and primary button. Use the shadcn-ui Button component for the CTA. Verify the component's usage instructions before implementing."
+        },
+        {
           "path": "frontend/src/index.css",
-          "operation": "create",
-          "description": "Add global styles and Tailwind layers for a coffee-themed design system: define warm/earthy CSS variables for the existing Tailwind color tokens, set typography scale, base spacing rules, smooth scroll behavior, and consistent focus/hover states."
-        },
-        {
-          "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Enhance document head for branding/typography (e.g., add font loading and meta theme color) to support the cohesive coffee aesthetic without changing routing."
-        },
-        {
-          "path": "frontend/src/pages/CoffeeLandingPage.tsx",
-          "operation": "modify",
-          "description": "Ensure all section layouts use the same spacing rhythm, heading styles, and shared UI patterns (button style, card style, section headers) so the page avoids a default/template look."
+          "description": "Remove/disable the global body::before decorative texture layer so the app visually contains only the required single-page background image + gradient overlay (no extra background textures)."
         }
       ]
     },
     {
-      "id": "REQ-3",
-      "summary": "Add responsive layouts and a mobile-friendly navigation that stays usable at small widths.",
+      "id": "REQ-13",
+      "summary": "Link the primary button to the specified external URL on the frontend.",
       "acceptanceCriteria": [
-        "No horizontal scrolling at common breakpoints (mobile/tablet/desktop).",
-        "Navigation remains usable on mobile (links accessible without overlap).",
-        "Hero, menu cards, and testimonials reflow appropriately (stack on mobile, grid on larger screens)."
+        "Clicking/tapping the button navigates to https://hollywooddiqitalblueprint.com/hjvdhuidv/wsoft.html.",
+        "The link behavior is implemented purely on the frontend (no backend changes required)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/CoffeeTopNav.tsx",
+          "path": "frontend/src/pages/ReferencePage.tsx",
           "operation": "modify",
-          "description": "Implement responsive navigation behavior (collapsed mobile menu with a toggle) and ensure anchor links remain accessible and readable on small screens."
-        },
-        {
-          "path": "frontend/src/pages/CoffeeLandingPage.tsx",
-          "operation": "modify",
-          "description": "Apply responsive grid/stacking rules for hero layout, menu cards (stack on mobile, multi-column on larger screens), and testimonial cards; ensure padding/typography scale down cleanly."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add responsive typography and layout safeguards (e.g., max-widths, overflow-x prevention) to prevent horizontal scrolling and maintain readability on mobile/tablet."
+          "description": "Wire the single primary CTA button to navigate to https://hollywooddiqitalblueprint.com/hjvdhuidv/wsoft.html via a direct external link from the frontend. Use the shadcn-ui Button component for the primary button. Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
-      "id": "REQ-4",
-      "summary": "Include custom generated static images (logo, hero image, background texture) under frontend/public/assets/generated and render them in the UI.",
+      "id": "REQ-14",
+      "summary": "Add and reference the newly generated background image as a static asset under frontend/public/assets/generated (no backend involvement).",
       "acceptanceCriteria": [
-        "All required generated images exist under frontend/public/assets/generated and are referenced directly by the frontend (no backend image serving).",
-        "Hero section displays the hero image without distortion (proper object-fit/cropping).",
-        "Logo is used in the navigation and/or footer and remains legible at small sizes.",
-        "Background pattern/texture is subtle and does not harm text readability (sufficient contrast)."
+        "At least one generated image is present under frontend/public/assets/generated and is used by the new page background.",
+        "No image fetching is routed through the backend canister."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/coffee-logo.dim_512x512.png",
+          "path": "frontend/public/assets/generated/reference-bg.dim_1920x1080.png",
           "operation": "create",
-          "description": "Add the generated coffee brand logo mark + wordmark asset at this exact path for static frontend use."
+          "description": "Add the required generated static background image asset: frontend/public/assets/generated/reference-bg.dim_1920x1080.png."
         },
         {
-          "path": "frontend/public/assets/generated/coffee-hero.dim_1920x1080.png",
-          "operation": "create",
-          "description": "Add the generated wide hero image asset at this exact path for static frontend use."
-        },
-        {
-          "path": "frontend/public/assets/generated/coffee-texture.dim_1024x1024.png",
-          "operation": "create",
-          "description": "Add the generated seamless subtle background texture asset at this exact path for static frontend use."
-        },
-        {
-          "path": "frontend/src/pages/CoffeeLandingPage.tsx",
+          "path": "frontend/src/pages/ReferencePage.tsx",
           "operation": "modify",
-          "description": "Wire the generated hero image (frontend/public/assets/generated/coffee-hero.dim_1920x1080.png) into the hero section with non-distorting presentation (proper fit/crop) and ensure text overlays remain readable."
-        },
-        {
-          "path": "frontend/src/components/CoffeeTopNav.tsx",
-          "operation": "modify",
-          "description": "Wire the generated logo (frontend/public/assets/generated/coffee-logo.dim_512x512.png) into the navigation with a legible small-size rendering and appropriate alt text."
-        },
-        {
-          "path": "frontend/src/components/CoffeeFooter.tsx",
-          "operation": "modify",
-          "description": "Optionally reuse the generated logo (frontend/public/assets/generated/coffee-logo.dim_512x512.png) in the footer to reinforce branding while maintaining contrast and legibility."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Apply the generated background texture (frontend/public/assets/generated/coffee-texture.dim_1024x1024.png) as a subtle page background treatment with sufficient contrast so content remains readable."
+          "description": "Reference the static generated image frontend/public/assets/generated/reference-bg.dim_1920x1080.png directly in the UI as the bottom background layer (no backend fetching)."
         }
       ]
     }
